@@ -474,6 +474,9 @@ async fn main() -> Result<()> {
         Subcommands::Create2(cmd) => {
             cmd.run()?;
         }
+        Subcommands::Create3(cmd) => {
+            cmd.run()?;
+        }
         Subcommands::Wallet { command } => command.run().await?,
         Subcommands::Completions { shell } => {
             generate(shell, &mut Opts::command(), "cast", &mut std::io::stdout())

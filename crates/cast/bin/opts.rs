@@ -1,7 +1,8 @@
 use crate::cmd::{
     access_list::AccessListArgs, bind::BindArgs, call::CallArgs, create2::Create2Args,
-    estimate::EstimateArgs, find_block::FindBlockArgs, interface::InterfaceArgs, logs::LogsArgs,
-    rpc::RpcArgs, run::RunArgs, send::SendTxArgs, storage::StorageArgs, wallet::WalletSubcommands,
+    create3::Create3Args, estimate::EstimateArgs, find_block::FindBlockArgs,
+    interface::InterfaceArgs, logs::LogsArgs, rpc::RpcArgs, run::RunArgs, send::SendTxArgs,
+    storage::StorageArgs, wallet::WalletSubcommands,
 };
 use clap::{Parser, Subcommand, ValueHint};
 use ethers::{
@@ -816,6 +817,10 @@ pub enum Subcommands {
     /// Generate a deterministic contract address using CREATE2.
     #[clap(visible_alias = "c2")]
     Create2(Create2Args),
+
+    /// Generate a deterministic contract address using CREATE3 factory.
+    #[clap(visible_alias = "c3")]
+    Create3(Create3Args),
 
     /// Get the block number closest to the provided timestamp.
     #[clap(visible_alias = "f")]
